@@ -1,6 +1,9 @@
 package ec.com.softwareevolutivo.gildedrose;
 
-public class Item {
+abstract class Item {
+
+    private static final int MAX_QUALITY = 50;
+    private static final int MIN_QUALITY = 0;
 
     public String name;
 
@@ -18,4 +21,27 @@ public class Item {
    public String toString() {
         return this.name + ", " + this.sellIn + ", " + this.quality;
     }
+
+    public abstract void updateQuality();
+
+    void decreaseSellIn() {
+        this.sellIn -= 1;
+    }
+
+    void increaseQuality() {
+        if (this.quality < MAX_QUALITY) {
+            this.quality += 1;
+        }
+    }
+
+    void decreaseQuality() {
+        if (this.quality > MIN_QUALITY) {
+            this.quality -= 1;
+        }
+    }
+
+    void resetQuality() {
+        this.quality = 0;
+    }
+
 }
