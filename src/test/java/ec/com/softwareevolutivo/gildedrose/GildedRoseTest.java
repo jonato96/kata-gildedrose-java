@@ -129,4 +129,14 @@ class GildedRoseTest {
 
         assertEquals(0, backstagePasses.quality);
     }
+
+    @Test
+    public void testConjuredPassLosesQualityDouble() {
+        Item conjuredItem = new Item("Conjured", 5, 20);
+
+        GildedRose gildedRose = new GildedRose(arrayWith(conjuredItem));
+        gildedRose.updateQuality();
+
+        assertEquals(18, conjuredItem.quality);
+    }
 }
