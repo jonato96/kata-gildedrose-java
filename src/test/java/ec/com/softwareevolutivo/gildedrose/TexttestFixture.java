@@ -13,8 +13,9 @@ public class TexttestFixture {
                 new Backstage( 15, 20),
                 new Backstage( 10, 49),
                 new Backstage( 5, 49),
-                // this conjured item does not work properly yet
-                new DefaultItem("Conjured Mana Cake", 3, 6) };
+                // solved
+                new Conjured(3, 6) 
+            };
 
         GildedRose app = new GildedRose(items);
 
